@@ -11,6 +11,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'kien/ctrlp.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'vim-scripts/indentpython.vim'
+" Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
@@ -21,15 +27,16 @@ Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Plugins
-Plugin 'vim-scripts/indentpython.vim'
-" Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
 
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set autoindent
+let g:mapleader=','
+
+"mappings
+map <Leader> <Plug>(easymotion-prefix)
+
 
 au FileType py
     \ setlocal textwidth=79 expandtab fileformat=unix
@@ -42,3 +49,4 @@ syntax on
 
 set nu
 set splitbelow
+highlight LineNr ctermfg=grey term=bold
